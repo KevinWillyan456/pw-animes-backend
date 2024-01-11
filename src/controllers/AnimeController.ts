@@ -15,6 +15,10 @@ export default class AnimeController {
     public static async getById(req: Request, res: Response) {
         try {
             const anime = await AnimeModel.findById(req.params.id)
+
+            if (!anime) {
+                return res.status(404).json({ message: 'Anime not found' })
+            }
             res.status(200).json(anime)
         } catch (error) {
             res.status(500).json(error)
