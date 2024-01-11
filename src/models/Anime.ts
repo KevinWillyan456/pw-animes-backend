@@ -23,7 +23,7 @@ const episodioSchema = new Schema<Episodio>({
     _id: { type: String, required: true },
     episodioNumero: { type: Number, required: true },
     episodioUrl: { type: String, required: true },
-    episodioTipo: { type: String, required: true },
+    episodioTipo: { type: String, required: true, default: 'normal' },
 })
 
 const animeSchema = new Schema<Anime>({
