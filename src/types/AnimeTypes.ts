@@ -6,7 +6,7 @@ interface Episodio {
 }
 
 export default interface AnimeTypes {
-    id: number
+    id: string
     nome: string
     ano: number
     genero: string
