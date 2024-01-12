@@ -75,6 +75,7 @@ export default class AnimeController {
                 urlTrailer,
                 sinopse,
                 classificacaoIndicativa,
+                dataCriacao: Date.now(),
             })
 
             await AnimeModel.create(anime)

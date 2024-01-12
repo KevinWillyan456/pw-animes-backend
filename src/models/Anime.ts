@@ -17,6 +17,7 @@ interface Anime extends Document {
     sinopse: string
     classificacaoIndicativa: number
     episodios: Episodio[]
+    dataCriacao: Date
 }
 
 const episodioSchema = new Schema<Episodio>({
@@ -36,6 +37,7 @@ const animeSchema = new Schema<Anime>({
     sinopse: { type: String, required: true },
     classificacaoIndicativa: { type: Number, required: true },
     episodios: { type: [episodioSchema], required: false },
+    dataCriacao: { type: Date, required: true, default: Date.now },
 })
 
 const AnimeModel = mongoose.model<Anime>('Anime', animeSchema)
