@@ -6,6 +6,9 @@ export default class AnimeController {
     public static async getAll(req: Request, res: Response) {
         try {
             const animes = await AnimeModel.find()
+                .sort({ nome: 1 })
+                .collation({ locale: 'pt', strength: 2 })
+
             animes.forEach((anime) => {
                 anime.episodios.sort((a, b) => {
                     if (a.episodioNumero > b.episodioNumero) return 1
